@@ -1,31 +1,129 @@
 <div class="home-container">
   
   <div class="content">
-    <h1 class="title">Ruleta · Trampa</h1>
+
+        <!-- Ruleta decorativa -->
+     <!-- Ruleta decorativa mejorada -->
+    <div class="roulette-decoration">
+      <div class="roulette-glow"></div>
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sombra -->
+        <defs>
+          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="2" result="offsetblur"/>
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.3"/>
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          
+          <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#c5483b;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#8a3329;stop-opacity:1" />
+          </radialGradient>
+          
+          <radialGradient id="grad2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#d4a851;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#9a7a3b;stop-opacity:1" />
+          </radialGradient>
+          
+          <radialGradient id="grad3" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#5fb37a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#458359;stop-opacity:1" />
+          </radialGradient>
+          
+          <radialGradient id="grad4" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#4a7c8c;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#355a66;stop-opacity:1" />
+          </radialGradient>
+          
+          <radialGradient id="grad5" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#a8688f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#7a4d69;stop-opacity:1" />
+          </radialGradient>
+          
+          <radialGradient id="grad6" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#e8b86a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b38a4d;stop-opacity:1" />
+          </radialGradient>
+          
+          <radialGradient id="grad7" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#d97a3f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#a35b2f;stop-opacity:1" />
+          </radialGradient>
+          
+          <radialGradient id="grad8" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#7a9e7e;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#5a745d;stop-opacity:1" />
+          </radialGradient>
+        </defs>
+        
+        <!-- Segmentos de la ruleta con degradados -->
+        <g class="wheel" filter="url(#shadow)">
+          <path d="M 100 100 L 100 0 A 100 100 0 0 1 173.21 50 Z" fill="url(#grad1)" stroke="#0e0d12" stroke-width="1"/>
+          <path d="M 100 100 L 173.21 50 A 100 100 0 0 1 173.21 150 Z" fill="url(#grad2)" stroke="#0e0d12" stroke-width="1"/>
+          <path d="M 100 100 L 173.21 150 A 100 100 0 0 1 100 200 Z" fill="url(#grad3)" stroke="#0e0d12" stroke-width="1"/>
+          <path d="M 100 100 L 100 200 A 100 100 0 0 1 26.79 150 Z" fill="url(#grad4)" stroke="#0e0d12" stroke-width="1"/>
+          <path d="M 100 100 L 26.79 150 A 100 100 0 0 1 26.79 50 Z" fill="url(#grad5)" stroke="#0e0d12" stroke-width="1"/>
+          <path d="M 100 100 L 26.79 50 A 100 100 0 0 1 100 0 Z" fill="url(#grad6)" stroke="#0e0d12" stroke-width="1"/>
+          <path d="M 100 100 L 100 0 A 100 100 0 0 0 26.79 50 Z" fill="url(#grad7)" stroke="#0e0d12" stroke-width="1"/>
+          <path d="M 100 100 L 173.21 50 A 100 100 0 0 0 100 0 Z" fill="url(#grad8)" stroke="#0e0d12" stroke-width="1"/>
+          
+          <!-- Aro exterior -->
+          <circle cx="100" cy="100" r="98" fill="none" stroke="#2a2832" stroke-width="3"/>
+          
+          <!-- Centro con efecto 3D -->
+          <circle cx="100" cy="100" r="22" fill="#1c1b22"/>
+          <circle cx="100" cy="100" r="20" fill="#15141a"/>
+          <circle cx="100" cy="100" r="18" fill="none" stroke="#d4a851" stroke-width="3"/>
+          <circle cx="100" cy="100" r="12" fill="#d4a851" opacity="0.3"/>
+        </g>
+        
+        <!-- Flecha indicadora con sombra -->
+        <defs>
+          <filter id="pointer-shadow">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.5"/>
+          </filter>
+        </defs>
+        <polygon points="100,8 92,20 108,20" fill="#d4a851" class="pointer" filter="url(#pointer-shadow)"/>
+        <polygon points="100,12 94,20 106,20" fill="#e8b86a" class="pointer"/>
+      </svg>
+    </div>
+
+
+
+
+
+    <h1 class="title">Biozin · Roulette</h1>
     <p class="subtitle">
-      Demo de prueba de concepto. Abre cada vista en una pestaña distinta del mismo 
+      Abre cada vista en una pestaña distinta del mismo 
       navegador (mismo origen) — se sincronizan vía WebSocket en tiempo real.
     </p>
+
+
+
+
 
     <div class="cards">
       
       <!-- Card Profesor -->
       <button class="card" (click)="goTo('/profesor')">
-        <div class="label">VISTA 1</div>
-        <h2>Profesor</h2>
+        <h2>Administrador</h2>
         <p>Agrega los nombres y gira. Cree que es totalmente aleatoria.</p>
       </button>
 
       <!-- Card Pantalla -->
       <button class="card" (click)="goTo('/pantalla')">
-        <div class="label">VISTA 2 · PROYECTOR</div>
         <h2>Pantalla</h2>
         <p>Vista pública. Solo muestra la ruleta girando y el ganador.</p>
       </button>
 
       <!-- Card Control -->
       <button class="card secret" (click)="goTo('/control/secreto123')">
-        <div class="label">VISTA 3 · OCULTA</div>
         <h2>Control</h2>
         <p>Tu panel privado. Marca quién va a salir antes del giro.</p>
       </button>
