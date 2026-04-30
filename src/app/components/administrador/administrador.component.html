@@ -34,7 +34,7 @@
 
     <!-- Columna derecha: Lista de nombres -->
     <div class="panel">
-      <h3>LISTA DE ESTUDIANTES</h3>
+      <h3>LISTA DE PARTICIPANTES</h3>
       
       <!-- Formulario para agregar -->
       <div class="input-row">
@@ -42,7 +42,7 @@
           type="text" 
           [(ngModel)]="nuevoNombre" 
           (keydown.enter)="agregarNombre()"
-          placeholder="Nombre del estudiante..."
+          placeholder="Nombre del participante..."
           maxlength="30">
         <button (click)="agregarNombre()">+</button>
       </div>
