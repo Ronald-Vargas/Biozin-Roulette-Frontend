@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Pantalla } from './pantalla';
+import { Pantalla } from './pantalla.component';
 
 describe('Pantalla', () => {
   let component: Pantalla;

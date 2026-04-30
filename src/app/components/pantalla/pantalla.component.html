@@ -1,0 +1,12 @@
+<div class="pantalla-container">
+  
+  <div class="wheel-wrapper">
+    <div class="pointer"></div>
+    <canvas #wheelCanvas width="800" height="800"></canvas>
+  </div>
+
+  <div class="ganador-display" [class.show]="mostrarGanador">
+    {{ ganador }}
+  </div>
+
+</div>

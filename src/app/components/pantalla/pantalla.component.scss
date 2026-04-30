@@ -1,0 +1,56 @@
+.pantalla-container {
+  min-height: 100vh;
+  background: #0e0d12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.wheel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: min(70vh, 90vw);
+  aspect-ratio: 1;
+}
+
+.pointer {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 36px solid #d4a851;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
+  z-index: 10;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ganador-display {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #d4a851;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+}
+
+.ganador-display.show {
+  opacity: 1;
+}

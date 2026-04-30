@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { ControlComponent } from './components/control/control';
-import { PantallaComponent } from './components/pantalla/pantalla';
+import { PantallaComponent } from './components/pantalla/pantalla.component';
 import { ProfesorComponent } from './components/profesor/profesor.component';
 
 
