@@ -5,13 +5,15 @@ import { Subscription } from 'rxjs';
 import { GiroResponse, RouletteService } from '../../services/roulette';
 
 @Component({
-  selector: 'app-profesor',
+  selector: 'app-administrador',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './profesor.component.html',
-  styleUrls: ['./profesor.component.scss']
+  templateUrl: './administrador.component.html',
+  styleUrls: ['./administrador.component.scss']
 })
-export class ProfesorComponent implements OnInit, OnDestroy {
+
+
+export class AdministradorComponent implements OnInit, OnDestroy {
   
   @ViewChild('wheelCanvas', { static: false }) canvasRef!: ElementRef<HTMLCanvasElement>;
   
