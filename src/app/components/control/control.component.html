@@ -1,0 +1,73 @@
+<div class="control-container">
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="title">
+        <span class="icon">🔐</span>
+        <span>Panel de Control</span>
+      </div>
+      <div class="status" [class.connected]="conectado" [class.disconnected]="!conectado">
+        {{ conectado ? '✅ Activo' : '❌ Desconectado' }}
+      </div>
+    </div>
+  </header>
+
+  <!-- Alerta de seguridad -->
+  <div class="alert">
+    ⚠️ Vista confidencial. No compartir pantalla. El profesor y la audiencia NO pueden ver esto.
+  </div>
+
+  <!-- Toggle de modo -->
+  <div class="mode-toggle">
+    <button 
+      [class.active]="modoForzado" 
+      (click)="toggleModo(true)">
+      FORZAR
+    </button>
+    <button 
+      [class.active]="!modoForzado" 
+      (click)="toggleModo(false)">
+      ALEATORIO
+    </button>
+  </div>
+
+  <!-- Lista de control -->
+  <div class="control-list" *ngIf="modoForzado">
+    
+    <div *ngIf="nombres.length === 0" class="empty-msg">
+      Esperando que el profesor agregue nombres...
+    </div>
+
+    <div 
+      *ngFor="let nombre of nombres; let i = index"
+      class="control-item"
+      [class.selected]="isSelected(i)"
+      (click)="seleccionarNombre(i)">
+      
+      <div class="check"></div>
+      <div class="name">{{ nombre }}</div>
+      <div class="index">#{{ i }}</div>
+    </div>
+  </div>
+
+  <!-- Mensaje de modo aleatorio -->
+  <div class="random-mode-msg" *ngIf="!modoForzado">
+    <div class="icon">🎲</div>
+    <p>Modo aleatorio activo</p>
+    <small>La ruleta decidirá el ganador</small>
+  </div>
+
+  <!-- Barra de estado -->
+  <div class="status-bar">
+    <div class="info">
+      <span class="dot"></span>
+      <span>Sincronizado</span>
+    </div>
+    <div class="stats">
+      <span>{{ nombres.length }} nombres</span>
+      <span *ngIf="historial.length > 0"> • {{ historial.length }} ya salieron</span>
+    </div>
+  </div>
+
+</div>

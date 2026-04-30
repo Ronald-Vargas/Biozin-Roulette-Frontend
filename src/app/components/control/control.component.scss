@@ -1,0 +1,241 @@
+.control-container {
+  min-height: 100vh;
+  background: #0e0d12;
+  color: #f4f1e8;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header */
+.header {
+  background: #15141a;
+  border-bottom: 1px solid #2a2832;
+  padding: 1rem 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+.status {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status.connected {
+  background: rgba(95, 179, 122, 0.2);
+  color: #5fb37a;
+  border: 1px solid #5fb37a;
+}
+
+.status.disconnected {
+  background: rgba(197, 72, 59, 0.2);
+  color: #c5483b;
+  border: 1px solid #c5483b;
+}
+
+/* Contenido */
+.control-container > *:not(.header):not(.status-bar) {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Alerta */
+.alert {
+  background: rgba(197, 72, 59, 0.1);
+  border: 1px solid rgba(197, 72, 59, 0.5);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  font-size: 0.875rem;
+  color: #c5483b;
+  line-height: 1.6;
+}
+
+/* Toggle de modo */
+.mode-toggle {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem auto;
+}
+
+.mode-toggle button {
+  flex: 1;
+  background: #1c1b22;
+  border: 1px solid #2a2832;
+  color: #8a8794;
+  padding: 0.875rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-toggle button:hover {
+  border-color: #3a3842;
+}
+
+.mode-toggle button.active {
+  background: #5fb37a;
+  color: #0e0d12;
+  border-color: #5fb37a;
+}
+
+/* Lista de control */
+.control-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem auto;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #8a8794;
+  padding: 3rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #1c1b22;
+  border: 2px solid #2a2832;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.control-item:hover {
+  border-color: #3a3842;
+  background: #1f1e25;
+}
+
+.control-item.selected {
+  border-color: #5fb37a;
+  background: rgba(95, 179, 122, 0.1);
+}
+
+.check {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #2a2832;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.control-item.selected .check {
+  background: #5fb37a;
+  border-color: #5fb37a;
+}
+
+.control-item.selected .check::after {
+  content: '✓';
+  color: #0e0d12;
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+
+.name {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.index {
+  font-size: 0.75rem;
+  color: #8a8794;
+  font-family: monospace;
+}
+
+/* Modo aleatorio */
+.random-mode-msg {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #8a8794;
+}
+
+.random-mode-msg .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.random-mode-msg p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f4f1e8;
+  margin-bottom: 0.5rem;
+}
+
+.random-mode-msg small {
+  font-size: 0.875rem;
+}
+
+/* Barra de estado */
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #15141a;
+  border-top: 1px solid #2a2832;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #8a8794;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5fb37a;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.stats {
+  font-family: monospace;
+  font-size: 0.8rem;
+}
