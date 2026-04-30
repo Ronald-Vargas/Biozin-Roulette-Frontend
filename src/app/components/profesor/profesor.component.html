@@ -1,0 +1,64 @@
+<div class="profesor-container">
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1>🎓 Panel del Profesor</h1>
+      <div class="status" [class.connected]="conectado" [class.disconnected]="!conectado">
+        {{ conectado ? '✅ Conectado' : '❌ Desconectado' }}
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    
+    <!-- Columna izquierda: Ruleta -->
+    <div class="wheel-section">
+      <div class="wheel-container">
+        <div class="pointer"></div>
+        <canvas #wheelCanvas width="500" height="500"></canvas>
+      </div>
+      
+      <button 
+        class="btn-girar" 
+        (click)="girar()" 
+        [disabled]="girando || nombres.length === 0">
+        {{ girando ? 'GIRANDO...' : '🎲 GIRAR' }}
+      </button>
+      
+      <div class="ganador-banner" *ngIf="ganador">
+        🎉 Ganador: <strong>{{ ganador }}</strong>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Lista de nombres -->
+    <div class="panel">
+      <h3>LISTA DE ESTUDIANTES</h3>
+      
+      <!-- Formulario para agregar -->
+      <div class="input-row">
+        <input 
+          type="text" 
+          [(ngModel)]="nuevoNombre" 
+          (keydown.enter)="agregarNombre()"
+          placeholder="Nombre del estudiante..."
+          maxlength="30">
+        <button (click)="agregarNombre()">+</button>
+      </div>
+
+      <!-- Lista -->
+      <div class="nombres-list">
+        <div *ngIf="nombres.length === 0" class="empty-msg">
+          Aún no hay nombres agregados
+        </div>
+        
+        <div *ngFor="let nombre of nombres; let i = index" class="nombre-chip">
+          <span>{{ nombre }}</span>
+          <button (click)="eliminarNombre(i)" class="btn-eliminar">×</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
