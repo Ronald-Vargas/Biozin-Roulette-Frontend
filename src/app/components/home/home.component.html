@@ -1,0 +1,36 @@
+<div class="home-container">
+  
+  <div class="content">
+    <h1 class="title">Ruleta · Trampa</h1>
+    <p class="subtitle">
+      Demo de prueba de concepto. Abre cada vista en una pestaña distinta del mismo 
+      navegador (mismo origen) — se sincronizan vía WebSocket en tiempo real.
+    </p>
+
+    <div class="cards">
+      
+      <!-- Card Profesor -->
+      <button class="card" (click)="goTo('/profesor')">
+        <div class="label">VISTA 1</div>
+        <h2>Profesor</h2>
+        <p>Agrega los nombres y gira. Cree que es totalmente aleatoria.</p>
+      </button>
+
+      <!-- Card Pantalla -->
+      <button class="card" (click)="goTo('/pantalla')">
+        <div class="label">VISTA 2 · PROYECTOR</div>
+        <h2>Pantalla</h2>
+        <p>Vista pública. Solo muestra la ruleta girando y el ganador.</p>
+      </button>
+
+      <!-- Card Control -->
+      <button class="card secret" (click)="goTo('/control/secreto123')">
+        <div class="label">VISTA 3 · OCULTA</div>
+        <h2>Control</h2>
+        <p>Tu panel privado. Marca quién va a salir antes del giro.</p>
+      </button>
+
+    </div>
+  </div>
+
+</div>
